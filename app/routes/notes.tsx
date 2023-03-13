@@ -11,7 +11,6 @@ export default function Notes() {
 }
 
 export async function action({ request }: ActionArgs) {
-  console.log(typeof request);
   const formData = await request.formData();
   const noteData = Object.fromEntries(formData);
   // TODO: Add validation
