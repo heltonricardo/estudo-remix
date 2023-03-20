@@ -1,5 +1,5 @@
 import fs from "fs/promises";
-import Note from "~/interfaces/Note";
+import Note from "~/models/Note";
 
 const FILE_NAME = "notes.json";
 

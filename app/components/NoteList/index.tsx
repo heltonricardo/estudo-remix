@@ -1,4 +1,4 @@
-import Note from "~/interfaces/Note";
+import Note from "~/models/Note";
 import styles from "./styles.css";
 
 export default function NoteList({ notes }: { notes: Note[] }) {
