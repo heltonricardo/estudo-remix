@@ -1,5 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import { Link, Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 import styles from "~/styles/main.css";
 import MainNavigation from "./components/MainNavigation";
 
@@ -21,6 +21,35 @@ export default function App() {
           <MainNavigation />
         </header>
         <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
+}
+
+// This will be rendered instead of the App component \
+// if an error is thrown anywhere in your app:
+export function ErrorBoundary({ error }: { error: Error }) {
+  return (
+    <html lang="en">
+      <head>
+        <Meta />
+        <Links />
+        <title>An error ocurred!</title>
+      </head>
+      <body>
+        <header>
+          <MainNavigation />
+        </header>
+        <main className="error">
+          <h1>An error ocurred!</h1>
+          <p>{error.message}</p>
+          <p>
+            Back to <Link to="/">safety</Link>!
+          </p>
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
