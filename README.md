@@ -45,6 +45,8 @@ Função que retorna itens para serem adicionados na tag links do HTML gerado:
 </html>
 ```
 
+Muito usado para adicionar estilos via arquivo.css quando não usa-se framework CSS que dispensa arquivo segregado para estilos, como [Tailwind](https://tailwindcss.com/) e [Bootstrap](https://getbootstrap.com/).
+
 Exemplo em: [NoteList/index.tsx](./app/components/NoteList/index.tsx)
 
 ##### 🎬 Função action
