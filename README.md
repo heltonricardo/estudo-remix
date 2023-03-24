@@ -7,36 +7,40 @@ Link do deploy: TODO
 
 # 🔎 Sumário
 
-- [Componentes](#✅-componentes)
-  - [Outlet](#🔁-componente-outlet)
-- [Funções](#✅-funções)
-  - [Principal](#🎯-função-principal-exemplo-de-nome---leia-a-descrição)
-  - [links](#🔀-função-links)
-  - [action](#🎬-função-action)
-  - [loader](#🌐-função-loader)
-  - [ErrorBoundary](#🌐-função-errorboundary)
+- [✅ Componentes](#-componentes)
+  - [🔁 Outlet](#-componente-outlet-)
+- [✅ Funções](#-funções)
+  - [🎯 Principal](#-função-principal)
+  - [🔀 links](#-função-links)
+  - [🎬 action](#-função-action)
+  - [🌐 loader](#-função-loader)
+  - [🐛 ErrorBoundary](#-função-errorboundary)
 
 &nbsp;
 
-### ✅ Componentes
+## ✅ Componentes
+
+Elementos do Remix para serem usados em formato de tags HTML / componentes React.
 
 &nbsp;
 
 ##### 🔁 Componente \<Outlet />
 
-Componente que será substituído pelo código da página, ou seja, o código retornado pela função Principal.
+Componente que será substituído pelo código da página, ou seja, o código retornado pela [Função Principal](#-função-principal).
 
 Exemplo em: [demo.tsx](./app/root.tsx)
 
 &nbsp;
 
-### ✅ Funções
+## ✅ Funções
+
+Trechos de código que devem seguir a nomenclatura proposta pelo Remix. **Algumas funções são escritas em _camelCase_ e outras em _PascalCase_.**
 
 &nbsp;
 
-##### 🎯 Função Principal (exemplo de nome - leia a descrição)
+##### 🎯 Função Principal
 
-O nome `Principal` será usado como exemplo de um nome de um componente ou rota:
+O nome `Principal` será usado como exemplo de um nome de um componente:
 
 ```tsx
 export default function Principal() {
@@ -45,8 +49,6 @@ export default function Principal() {
 ```
 
 Essa função é executada sempre que uma requisição do tipo GET é requisitada para a rota. Seu conteúdo de retorno será renderizado na tela.
-
-> Lembrando que é uma boa prática nomear a função principal do seu componente/página com o mesmo nome do arquivo, porém usando _PascalCase_. Nesse caso o nome do arquivo seria: `principal.tsx`, por exemplo.
 
 Exemplo em: [demo.tsx](./app/routes/demo.tsx)
 
@@ -75,7 +77,9 @@ Exemplo em: [NoteList/index.tsx](./app/components/NoteList/index.tsx)
 
 ##### 🎬 Função action
 
-Função executada sempre que uma requisição diferente de GET é executada na rota. Pode user usada, por exemplo, quando há uma submissão de formulário na página. O código dessa função é executado do lado do servidor e seu código fonte não é sequer enviado para o cliente.
+Função executada sempre que uma requisição diferente de `GET` é executada na rota. Pode user usada, por exemplo, quando há uma submissão de formulário na página.
+
+O código dessa função é executado do lado do servidor e seu código fonte não é sequer enviado para o cliente.
 
 Exemplo em: [notes.tsx](./app/routes/notes.tsx)
 
@@ -83,6 +87,18 @@ Exemplo em: [notes.tsx](./app/routes/notes.tsx)
 
 ##### 🌐 Função loader
 
-Função executada sempre que uma requisição do tipo GET é executada na rota. Usada para carregar dados que serão usados na renderização. Seu retorno é acessado na função Principal do componente usando o hook useLoaderData().
+Função executada sempre que uma requisição do tipo `GET` é executada na rota. Usada para carregar dados que serão usados na renderização.
+
+Seu retorno é acessado na [Função Principal](#-função-principal) do componente usando o hook `useLoaderData()`.
 
 Exemplo em: [notes.tsx](./app/routes/notes.tsx)
+
+&nbsp;
+
+##### 🐛 Função ErrorBoundary
+
+Função que representa o componente que será renderizado no lugar da [Função Principal](#-função-principal) quando um erro for lançado em qualquer lugar da aplicação.
+
+Pode ser usado no [root.tsx](./app/root.tsx) do projeto ou em um componente de rota. Se for usado no root, substituirá todo o conteúdo da página. Se for usado em um componente, substituirá somente o conteúdo retornado por esse componente mas manterá o conteúdo presente no root, com exceção do [\<Outlet />](#-componente-outlet-).
+
+Exemplo em: [notes.tsx](./app/routes/notes.tsx) e [root.tsx](./app/root.tsx)
