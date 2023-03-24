@@ -58,8 +58,6 @@ export function CatchBoundary() {
   );
 }
 
-// This will be rendered instead of the App component \
-// if an error is thrown anywhere in your app:
 export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <html lang="en">
