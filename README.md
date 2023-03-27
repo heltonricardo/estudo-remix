@@ -15,6 +15,7 @@ Link do deploy: TODO
   - [🔀 links](#-função-links)
   - [🌐 loader](#-função-loader)
   - [🎬 action](#-função-action)
+  - [💡 meta](#-função-meta)
   - [🧤 CatchBoundary](#-função-catchboundary)
   - [🐛 ErrorBoundary](#-função-errorboundary)
 - [✅ Roteamento](#-roteamento)
@@ -99,6 +100,27 @@ Exemplo em: [notes.tsx](./app/routes/notes.tsx)
 
 &nbsp;
 
+##### 💡 Função meta
+
+Função usada para adicionar metadados nas páginas da aplicação. Ela deve retornar um objeto do JavaScript com os membros desejados:
+
+```tsx
+export function meta({ data }) {
+  return {
+    title: data.tituloDaPagina,
+    description: data.descDaPagina,
+  };
+}
+```
+
+O metadado de cada página é mesclado, e sobrescrito, quando se aplica, com o conteúdo da super-rota (rota pai).
+
+Note que ela pode receber um parâmetro que será enviado automaticamente em sua chamada pelo Remix. Ela é executada depois da [Função loader](#-função-loader), então todos os dados necessários para ela já foram carregados.
+
+Exemplo em: [notes.$noteId.tsx](./app/routes/notes.%24noteId.tsx)
+
+&nbsp;
+
 ##### 🧤 Função CatchBoundary
 
 Função que representa o componente que será renderizado no lugar da [Função Principal](#-função-principal) quando houver um erro do tipo **JavaScript Response** em qualquer lugar da aplicação. É usada para capturar erros relacionados à renderização, mas não se limita a isso. Ela pode capturar erros que ocorrem durante a execução da [Função loader](#-função-loader) ou durante a renderização do componente, independentemente do motivo do erro:
@@ -167,7 +189,7 @@ export default function PaginaDetalhesDoAnimal() {
 }
 
 export async function loader({ params }: ActionArgs) {
-  const nomeDoAnimal = params.nomeDoAnimal || "";
+  const nomeDoAnimal = params.nomeDoAnimal;
   const animal = await obterAnimalPorNome(nomeDoAnimal);
   return animal;
 }
