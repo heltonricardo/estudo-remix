@@ -4,9 +4,8 @@
   padding: 2rem;
   border-radius: 6px;
   text-align: center;
-  background-color: var(--color-primary-10);
+  background-color: var(--color-primary-5);
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
-  
 }
 
 #note-form label,
@@ -27,7 +26,7 @@
   width: 100%;
   font: inherit;
   padding: 0.5rem 0.25rem;
-  background-color: var(--color-primary-100);
+  background-color: var(--color-primary-50);
   border: none;
   border-radius: 2px;
   color: var(--color-primary-800);
