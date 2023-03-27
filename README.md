@@ -17,6 +17,8 @@ Link do deploy: TODO
   - [🎬 action](#-função-action)
   - [🧤 CatchBoundary](#-função-catchboundary)
   - [🐛 ErrorBoundary](#-função-errorboundary)
+- [✅ Roteamento](#-roteamento)
+  - [💲 Rotas Dinâmicas](#-rotas-dinâmicas)
 
 &nbsp;
 
@@ -133,3 +135,46 @@ throw new Error("Herrar é umano");
 Pode ser usada no [root.tsx](./app/root.tsx) do projeto ou em um componente de rota. Se for usada no root, substituirá toda a página. Se for usada em um componente, substituirá somente o conteúdo retornado por esse componente mas manterá o trecho presente no root, com exceção do conteúdo do [Componente \<Outlet />](#-componente-outlet-).
 
 Exemplo em: [notes.tsx](./app/routes/notes.tsx) e [root.tsx](./app/root.tsx)
+
+&nbsp;
+
+## ✅ Roteamento
+
+Caminhos que definem como a aplicação web responderá às solicitações dos usuários.
+
+&nbsp;
+
+##### 💲 Rotas Dinâmicas
+
+As rotas dinâmicas podem ser criadas usando o símbolo `$` ao nomear um arquivo. A palavra que segue o símbolo, será usada como _placeholder_ no nome da rota. Também é possível usar o símbolo `.` para definir sub-rotas:
+
+```tsx
+/* Arquivo ~/routes/animais.$nomeDoAnimal.tsx */
+
+// Importações omitidas
+
+export default function PaginaDetalhesDoAnimal() {
+  const animal = useLoaderData();
+
+  return (
+    <main>
+      <header>
+        <h1>{animal.nome}</h1>
+      </header>
+      <p>{animal.detalhes}</p>
+    </main>
+  );
+}
+
+export async function loader({ params }: ActionArgs) {
+  const nomeDoAnimal = params.nomeDoAnimal || "";
+  const animal = await obterAnimalPorNome(nomeDoAnimal);
+  return animal;
+}
+```
+
+Note que o nome do arquivo é `animais.$nomeDoAnimal.tsx`, ou seja, a rota para esta página será `/animais/cachorro` ou `/animais/coelho`, por exemplo, pois o remix converte os pontos do nome do arquivo em barras para a sub-rota.
+
+> O ponto que separa a extensão do arquivo não será convertido em sub-rota!
+
+Exemplo em: [notes.$noteId.tsx](./app/routes/notes.%24noteId.tsx)
