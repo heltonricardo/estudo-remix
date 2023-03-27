@@ -31,6 +31,13 @@ export async function loader({ params }: ActionArgs) {
   return note;
 }
 
+export function meta({ data }: { data: Note }) {
+  return {
+    title: data.title,
+    description: data.content,
+  };
+}
+
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }

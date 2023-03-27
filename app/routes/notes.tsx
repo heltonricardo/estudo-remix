@@ -66,6 +66,13 @@ export function ErrorBoundary({ error }: { error: Error }) {
   );
 }
 
+export function meta() {
+  return {
+    title: "All notes",
+    description: "Manage your notes with ease",
+  };
+}
+
 export function links() {
   return [...newNoteLinks(), ...noteListLinks()];
 }
