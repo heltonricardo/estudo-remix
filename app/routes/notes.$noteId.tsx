@@ -1,4 +1,4 @@
-import { ActionArgs } from "@remix-run/node";
+import { ActionArgs, json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { getStoredNoteById } from "~/data/notes";
 import Note from "~/models/Note";
@@ -22,7 +22,13 @@ export default function NoteDetailsPage() {
 
 export async function loader({ params }: ActionArgs) {
   const noteId = params.noteId || "";
-  return await getStoredNoteById(noteId);
+  const note = await getStoredNoteById(noteId);
+
+  if (!note) {
+    throw json({ message: "Could not find note for id " + noteId }, { status: 404 });
+  }
+
+  return note;
 }
 
 export function links() {
