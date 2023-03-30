@@ -33,7 +33,7 @@ Elementos do Remix para serem usados em formato de tags HTML / componentes React
 
 Componente que será substituído pelo código da página, ou seja, o código retornado pela [Função Principal](#-função-principal).
 
-Exemplo em: [demo.tsx](./app/root.tsx)
+[Ver exemplo](./my-notes/app/root.tsx)
 
 &nbsp;
 
@@ -55,7 +55,7 @@ export default function Principal() {
 
 Essa função é executada sempre que uma requisição do tipo GET é requisitada para a rota. Seu conteúdo de retorno será renderizado na tela.
 
-Exemplo em: [demo.tsx](./app/routes/demo.tsx)
+[Ver exemplo](./my-notes/app/routes/demo.tsx)
 
 &nbsp;
 
@@ -76,7 +76,7 @@ Função que retorna itens para serem adicionados na tag links do HTML gerado:
 
 Muito usado para adicionar estilos via arquivo.css quando não usa-se framework CSS que dispensa arquivo segregado para estilos, como [Tailwind](https://tailwindcss.com/) e [Bootstrap](https://getbootstrap.com/).
 
-Exemplo em: [NoteList/index.tsx](./app/components/NoteList/index.tsx)
+[Ver exemplo](./my-notes/app/components/NoteList/index.tsx)
 
 &nbsp;
 
@@ -86,7 +86,7 @@ Função executada sempre que uma requisição do tipo `GET` é executada na rot
 
 Seu retorno é acessado na [Função Principal](#-função-principal) do componente usando o hook `useLoaderData()`. Nesse caso, a [Função CatchBoundary](#-função-catchboundary) pode ser usada para capturar erros e lidar com exceções durante a busca de dados.
 
-Exemplo em: [notes.tsx](./app/routes/notes.tsx)
+[Ver exemplo](./my-notes/app/routes/notes.tsx)
 
 &nbsp;
 
@@ -96,7 +96,7 @@ Função executada sempre que uma requisição diferente de `GET` é executada n
 
 O código dessa função é executado do lado do servidor e seu código fonte não é sequer enviado para o cliente. Nesse caso, a [Função CatchBoundary](#-função-catchboundary) pode ser usada para capturar erros e lidar com exceções durante a busca de dados.
 
-Exemplo em: [notes.tsx](./app/routes/notes.tsx)
+[Ver exemplo](./my-notes/app/routes/notes.tsx)
 
 &nbsp;
 
@@ -117,7 +117,7 @@ O metadado de cada página é mesclado, e sobrescrito, quando se aplica, com o c
 
 Note que ela pode receber um parâmetro que será enviado automaticamente em sua chamada pelo Remix. Ela é executada depois da [Função loader](#-função-loader), então todos os dados necessários para ela já foram carregados.
 
-Exemplo em: [notes.$noteId.tsx](./app/routes/notes.%24noteId.tsx)
+[Ver exemplo](./my-notes/app/routes/notes.%24noteId.tsx)
 
 &nbsp;
 
@@ -133,9 +133,9 @@ throw new Response();
 throw json();
 ```
 
-Pode ser usada no [root.tsx](./app/root.tsx) do projeto ou em um componente de rota. Se for usada no root, substituirá toda a página. Se for usada em um componente, substituirá somente o conteúdo retornado por esse componente mas manterá o trecho presente no root, com exceção do conteúdo do [Componente \<Outlet />](#-componente-outlet-).
+Pode ser usada no [root.tsx](./my-notes/app/root.tsx) do projeto ou em um componente de rota. Se for usada no root, substituirá toda a página. Se for usada em um componente, substituirá somente o conteúdo retornado por esse componente mas manterá o trecho presente no root, com exceção do conteúdo do [Componente \<Outlet />](#-componente-outlet-).
 
-Exemplo em: [notes.tsx](./app/routes/notes.tsx) e [root.tsx](./app/root.tsx)
+[Ver exemplo](./my-notes/app/routes/notes.tsx)
 
 &nbsp;
 
@@ -154,9 +154,9 @@ throw Error("E-Romeu");
 throw new Error("Herrar é umano");
 ```
 
-Pode ser usada no [root.tsx](./app/root.tsx) do projeto ou em um componente de rota. Se for usada no root, substituirá toda a página. Se for usada em um componente, substituirá somente o conteúdo retornado por esse componente mas manterá o trecho presente no root, com exceção do conteúdo do [Componente \<Outlet />](#-componente-outlet-).
+Pode ser usada no [root.tsx](./my-notes/app/root.tsx) do projeto ou em um componente de rota. Se for usada no root, substituirá toda a página. Se for usada em um componente, substituirá somente o conteúdo retornado por esse componente mas manterá o trecho presente no root, com exceção do conteúdo do [Componente \<Outlet />](#-componente-outlet-).
 
-Exemplo em: [notes.tsx](./app/routes/notes.tsx) e [root.tsx](./app/root.tsx)
+[Ver exemplo](./my-notes/app/routes/notes.tsx)
 
 &nbsp;
 
@@ -199,4 +199,4 @@ Note que o nome do arquivo é `animais.$nomeDoAnimal.tsx`, ou seja, a rota para 
 
 > O ponto que separa a extensão do arquivo não será convertido em sub-rota!
 
-Exemplo em: [notes.$noteId.tsx](./app/routes/notes.%24noteId.tsx)
+[Ver exemplo](./my-notes/app/routes/notes.%24noteId.tsx)
