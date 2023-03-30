@@ -2,7 +2,11 @@
 
 Estudo sobre o [Framework Remix](https://remix.run/)
 
-Link do deploy: TODO
+&nbsp;
+
+### Deploys dos projetos
+
+- [x] 📝 [My Notes](https://my-notes-tau.vercel.app/)
 
 &nbsp;
 
