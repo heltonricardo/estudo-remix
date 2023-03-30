@@ -5,7 +5,7 @@ import MainNavigation from "./components/MainNavigation";
 
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "Notes App",
+  title: "My Notes",
   viewport: "width=device-width,initial-scale=1",
 });
 
