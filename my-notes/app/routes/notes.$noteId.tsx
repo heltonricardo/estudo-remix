@@ -8,15 +8,23 @@ export default function NoteDetailsPage() {
   const note = useLoaderData<Note>();
 
   return (
-    <main id="note-details">
-      <header>
-        <nav>
-          <Link to="/notes">Back to all notes</Link>
-        </nav>
-        <h1>{note.title}</h1>
-      </header>
-      <p id="note-details-content">{note.content}</p>
-    </main>
+    <>
+      <p id="warning">
+        <p id="warning">
+          ⚠️ The data from this page is dynamically entered by users. The author of this project assumes no
+          responsibility for this content. ⚠️
+        </p>
+      </p>
+      <main id="note-details">
+        <header>
+          <nav>
+            <Link to="/notes">Back to all notes</Link>
+          </nav>
+          <h1>{note.title}</h1>
+        </header>
+        <p id="note-details-content">{note.content}</p>
+      </main>
+    </>
   );
 }
 

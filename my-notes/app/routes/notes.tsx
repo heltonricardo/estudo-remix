@@ -32,7 +32,7 @@ export async function action({ request }: ActionArgs) {
   // But we are using TS and the model, then:
   const title = formData.get("title")?.toString() || "";
   const content = formData.get("content")?.toString() || "";
-  const note = Note.newSimple(title, content)
+  const note = Note.newSimple(title, content);
 
   if (note.title.trim().length < 5) {
     return { message: "Invalid title: must be at least 5 characters long." };

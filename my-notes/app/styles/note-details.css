@@ -1,3 +1,9 @@
+#warning {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--color-primary-50);
+}
+
 #note-details {
   max-width: 40rem;
   margin: 3rem auto;
@@ -6,7 +12,7 @@
   color: var(--color-primary-50);
   background-color: var(--color-primary-800);
   border-radius: 24px;
-  animation: fade-slide-in 1s ease-out forwards;
+  animation: fade-slide-in 0.3s ease-out forwards;
 }
 
 #note-details nav {

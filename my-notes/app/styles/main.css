@@ -76,6 +76,17 @@ body {
   font-size: 1.5rem;
 }
 
+#credit {
+  text-align: center;
+  color: var(--color-primary-10);
+}
+
+#credit a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--color-primary-10);
+}
+
 @keyframes fade-blur-in {
   from {
     opacity: 0;

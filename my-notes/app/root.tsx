@@ -19,6 +19,12 @@ export default function App() {
       <body>
         <header>
           <MainNavigation />
+          <p id="credit">
+            By{" "}
+            <a href="https://github.com/heltonricardo/" target="_blank" rel="noreferrer">
+              Helton Ricardo
+            </a>
+          </p>
         </header>
         <Outlet />
         <ScrollRestoration />

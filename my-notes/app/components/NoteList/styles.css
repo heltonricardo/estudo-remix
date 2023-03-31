@@ -1,3 +1,8 @@
+#warning {
+  text-align: center;
+  color: var(--color-primary-10);
+}
+
 #note-list {
   max-width: 68rem;
   display: flex;
@@ -14,7 +19,7 @@
 }
 
 .note {
-  width: 30%;
+  width: 20rem;
   background-color: var(--color-primary-700);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
@@ -45,6 +50,9 @@
 .note h2 {
   margin: 0 0 0.5rem 0;
   color: var(--color-primary-50);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .note p {
