@@ -4,9 +4,9 @@ Estudo sobre o [Framework Remix](https://remix.run/)
 
 &nbsp;
 
-### Deploys dos projetos
+### Projetos deste repositório
 
-- [x] 📝 [My Notes](https://my-notes-tau.vercel.app/)
+- [x] 📝 [My Notes](https://github.com/heltonricardo/estudo-remix/tree/main/my-notes) - [Acessar deploy](https://my-notes-tau.vercel.app/)
 
 &nbsp;
 
