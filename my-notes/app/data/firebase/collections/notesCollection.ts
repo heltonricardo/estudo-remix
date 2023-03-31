@@ -24,12 +24,13 @@ export default class NotesCollection {
   }
 
   static async getStoredNotes(): Promise<Note[]> {
-    const query = await this.#collection().get();
+    const query = await this.#collection().orderBy("date", "desc").get();
     return query.docs.map((doc) => doc.data());
   }
 
   static async getStoredNoteById(id: string) {
-    const notes = await this.getStoredNotes();
-    return notes.find((note) => note.id === id);
+    const docId = firebase.firestore.FieldPath.documentId();
+    const query = await this.#collection().where(docId, "==", id).get();
+    return query.docs[0].data();
   }
 }
