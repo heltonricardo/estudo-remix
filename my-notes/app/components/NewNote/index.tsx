@@ -11,7 +11,7 @@ export default function NewNote() {
       {data?.message && <p>{data.message}</p>}
       <p>
         <label htmlFor="title">Title</label>
-        <input type="text" id="title" name="title" required />
+        <input type="text" id="title" name="title" autoComplete="off" required />
       </p>
       <p>
         <label htmlFor="content">Content</label>

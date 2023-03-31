@@ -19,8 +19,8 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   border-radius: 4px;
-  animation: fade-blur-in 1s ease-out forwards;
-  transition: all 0.3s ease-out;
+  animation: fade-blur-in 0.3s ease-out forwards;
+  transition: all 0.1s ease-out;
 }
 
 .note:hover {

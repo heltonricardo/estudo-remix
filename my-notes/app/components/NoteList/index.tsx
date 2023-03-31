@@ -13,8 +13,8 @@ export default function NoteList({ notes }: { notes: Note[] }) {
                 <ul className="note-meta">
                   <li>#{index + 1}</li>
                   <li>
-                    <time dateTime={note.id}>
-                      {new Date(note.id).toLocaleDateString("en-US", {
+                    <time dateTime={note.date}>
+                      {new Date(note.date).toLocaleDateString("en-US", {
                         day: "numeric",
                         month: "short",
                         year: "numeric",

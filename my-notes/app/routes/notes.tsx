@@ -2,7 +2,7 @@ import { ActionArgs, json, redirect } from "@remix-run/node";
 import { Link, useCatch, useLoaderData } from "@remix-run/react";
 import NewNote, { links as newNoteLinks } from "~/components/NewNote";
 import NoteList, { links as noteListLinks } from "~/components/NoteList";
-import { getStoredNotes, storeNotes } from "~/data/notes";
+import NotesCollection from "~/data/firebase/collections/notesCollection";
 import Note from "../models/Note";
 
 export default function Notes() {
@@ -17,7 +17,7 @@ export default function Notes() {
 }
 
 export async function loader() {
-  const notes = await getStoredNotes();
+  const notes = await NotesCollection.getStoredNotes();
   if (!notes?.length) {
     throw json({ message: "Could not find any notes!" }, { status: 404 });
   }
@@ -30,15 +30,15 @@ export async function action({ request }: ActionArgs) {
   // Use this to automatically get all the fields:
   // const note = Object.fromEntries(formData);
   // But we are using TS and the model, then:
-  const note = new Note(formData);
+  const title = formData.get("title")?.toString() || "";
+  const content = formData.get("content")?.toString() || "";
+  const note = Note.newSimple(title, content)
 
   if (note.title.trim().length < 5) {
     return { message: "Invalid title: must be at least 5 characters long." };
   }
 
-  const existingNotes = await getStoredNotes();
-  const updatedNotes = existingNotes.concat(note);
-  await storeNotes(updatedNotes);
+  await NotesCollection.storeNote(note);
   return redirect("/notes");
 }
 

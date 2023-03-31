@@ -1,6 +1,6 @@
 import { ActionArgs, json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
-import { getStoredNoteById } from "~/data/notes";
+import NotesCollection from "~/data/firebase/collections/notesCollection";
 import Note from "~/models/Note";
 import styles from "~/styles/note-details.css";
 
@@ -22,7 +22,7 @@ export default function NoteDetailsPage() {
 
 export async function loader({ params }: ActionArgs) {
   const noteId = params.noteId || "";
-  const note = await getStoredNoteById(noteId);
+  const note = await NotesCollection.getStoredNoteById(noteId);
 
   if (!note) {
     throw json({ message: "Could not find note for id " + noteId }, { status: 404 });

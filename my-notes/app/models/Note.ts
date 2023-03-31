@@ -2,10 +2,16 @@ export default class Note {
   id: string;
   title: string;
   content: string;
+  date: string;
 
-  constructor(formData: FormData) {
-    this.id = new Date().toISOString();
-    this.title = formData.get("title")?.toString() || "";
-    this.content = formData.get("content")?.toString() || "";
+  constructor(id: string = "", title: string = "", content: string = "", date: string = "") {
+    this.id = id;
+    this.title = title;
+    this.content = content;
+    this.date = date;
+  }
+
+  static newSimple(title: string, content: string) {
+    return new Note("", title, content, new Date().toISOString());
   }
 }
