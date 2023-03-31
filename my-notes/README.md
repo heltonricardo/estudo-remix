@@ -6,13 +6,7 @@ Aplicação simples para o armazenamento de anotações.
 
 <br />
 
-## Sumário: como executar este projeto localmente
-
-[I. Configurando a base de dados para o projeto](#i-configurando-a-base-de-dados-para-o-projeto)
-[II. Instalando as dependências](#ii-instalando-as-dependências)
-[III. Executando o projeto](#iii-executando-o-projeto)
-
-<br />
+## Como executar este projeto localmente
 
 ### I. Configurando a base de dados para o projeto
 
