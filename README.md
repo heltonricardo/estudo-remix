@@ -2,13 +2,14 @@
 
 Estudo sobre o [Framework Remix](https://remix.run/)
 
-&nbsp;
+<br />
 
 ### Projetos deste repositório
 
 - [x] 📝 [My Notes](https://github.com/heltonricardo/estudo-remix/tree/main/my-notes) - [Acessar deploy](https://my-notes-tau.vercel.app/)
+- [ ] 📝 [My Expenses](https://github.com/heltonricardo/estudo-remix/tree/main/my-expenses) - TODO
 
-&nbsp;
+<br />
 
 # 🔎 Sumário
 
@@ -25,13 +26,13 @@ Estudo sobre o [Framework Remix](https://remix.run/)
 - [✅ Roteamento](#-roteamento)
   - [💲 Rotas Dinâmicas](#-rotas-dinâmicas)
 
-&nbsp;
+<br />
 
 ## ✅ Componentes
 
 Elementos do Remix para serem usados em formato de tags HTML / componentes React.
 
-&nbsp;
+<br />
 
 ##### 🔁 Componente \<Outlet />
 
@@ -39,13 +40,13 @@ Componente que será substituído pelo código da página, ou seja, o código re
 
 [Ver exemplo](./my-notes/app/root.tsx)
 
-&nbsp;
+<br />
 
 ## ✅ Funções
 
 Trechos de código que devem seguir a nomenclatura proposta pelo Remix. **Algumas funções são escritas em _camelCase_ e outras em _PascalCase_.**
 
-&nbsp;
+<br />
 
 ##### 🎯 Função Principal
 
@@ -61,7 +62,7 @@ Essa função é executada sempre que uma requisição do tipo GET é requisitad
 
 [Ver exemplo](./my-notes/app/routes/demo.tsx)
 
-&nbsp;
+<br />
 
 ##### 🔀 Função links
 
@@ -82,7 +83,7 @@ Muito usado para adicionar estilos via arquivo.css quando não usa-se framework 
 
 [Ver exemplo](./my-notes/app/components/NoteList/index.tsx)
 
-&nbsp;
+<br />
 
 ##### 🌐 Função loader
 
@@ -92,7 +93,7 @@ Seu retorno é acessado na [Função Principal](#-função-principal) do compone
 
 [Ver exemplo](./my-notes/app/routes/notes.tsx)
 
-&nbsp;
+<br />
 
 ##### 🎬 Função action
 
@@ -102,7 +103,7 @@ O código dessa função é executado do lado do servidor e seu código fonte n�
 
 [Ver exemplo](./my-notes/app/routes/notes.tsx)
 
-&nbsp;
+<br />
 
 ##### 💡 Função meta
 
@@ -123,7 +124,7 @@ Note que ela pode receber um parâmetro que será enviado automaticamente em sua
 
 [Ver exemplo](./my-notes/app/routes/notes.%24noteId.tsx)
 
-&nbsp;
+<br />
 
 ##### 🧤 Função CatchBoundary
 
@@ -141,7 +142,7 @@ Pode ser usada no [root.tsx](./my-notes/app/root.tsx) do projeto ou em um compon
 
 [Ver exemplo](./my-notes/app/routes/notes.tsx)
 
-&nbsp;
+<br />
 
 ##### 🐛 Função ErrorBoundary
 
@@ -162,13 +163,13 @@ Pode ser usada no [root.tsx](./my-notes/app/root.tsx) do projeto ou em um compon
 
 [Ver exemplo](./my-notes/app/routes/notes.tsx)
 
-&nbsp;
+<br />
 
 ## ✅ Roteamento
 
 Caminhos que definem como a aplicação web responderá às solicitações dos usuários.
 
-&nbsp;
+<br />
 
 ##### 💲 Rotas Dinâmicas
 
