@@ -24,6 +24,7 @@ Estudo sobre o [Framework Remix](https://remix.run/)
   - [🧤 CatchBoundary](#-função-catchboundary)
   - [🐛 ErrorBoundary](#-função-errorboundary)
 - [✅ Roteamento](#-roteamento)
+  - [🔡 Sub-Rotas](#-sub-rotas)
   - [💲 Rotas Dinâmicas](#-rotas-dinâmicas)
 
 <br />
@@ -171,9 +172,45 @@ Caminhos que definem como a aplicação web responderá às solicitações dos u
 
 <br />
 
+##### 🔡 Sub-Rotas
+
+A hierarquia de sub-rotas pode ser definida de duas maneiras:
+
+- Usando diretórios:
+  ```
+  routes
+  ├── auth
+  │   ├── login.tsx
+  │   └── logout.tsx
+  └── dashboard
+      ├── aulas
+      │   └── $idAula.tsx
+      └── notas.tsx
+  ```
+- Usando o símbolo de ponto final (`.`):
+
+  ```
+  routes
+  ├── auth.login.tsx
+  ├── auth.logout.tsx
+  ├── dashboard.aulas.$idAula.tsx
+  └── dashboard.notas.tsx
+  ```
+
+  > O ponto que separa a extensão do arquivo não é convertido em sub-rota.
+
+  Ambos as maneiras acima geram as páginas:
+
+  - `/auth/login`
+  - `/auth/logout`
+  - `/dashboard/aulas/<id-aula>`
+  - `/dashboard/notas`
+
+<br />
+
 ##### 💲 Rotas Dinâmicas
 
-As rotas dinâmicas podem ser criadas usando o símbolo `$` ao nomear um arquivo. A palavra que segue o símbolo, será usada como _placeholder_ no nome da rota. Também é possível usar o símbolo `.` para definir sub-rotas:
+As rotas dinâmicas podem ser criadas usando o símbolo `$` ao nomear um arquivo. A palavra que segue o símbolo, será usada como _placeholder_ no nome da rota.
 
 ```tsx
 /* Arquivo ~/routes/animais.$nomeDoAnimal.tsx */
@@ -200,8 +237,6 @@ export async function loader({ params }: ActionArgs) {
 }
 ```
 
-Note que o nome do arquivo é `animais.$nomeDoAnimal.tsx`, ou seja, a rota para esta página será `/animais/cachorro` ou `/animais/coelho`, por exemplo, pois o remix converte os pontos do nome do arquivo em barras para a sub-rota.
-
-> O ponto que separa a extensão do arquivo não será convertido em sub-rota!
+Note que o nome do arquivo é `animais.$nomeDoAnimal.tsx`, ou seja, a rota para esta página será `/animais/cachorro` ou `/animais/coelho`, como visto nas [Sub-Rotas](#-sub-rotas).
 
 [Ver exemplo](./my-notes/app/routes/notes.%24noteId.tsx)
