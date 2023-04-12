@@ -1,6 +1,14 @@
-# Estudo Remix ®️
+<h1 align="center">Estudo Remix ®️</h1>
 
-Estudo sobre o [Framework Remix](https://remix.run/)
+&nbsp;
+
+<p align="center">
+  <img src="./assets/remix.png" width="400" alt="Logo Remix"/>
+</p>
+
+<p align="center">Estudo sobre o
+    <a href="https://remix.run/">Framework Remix</a>
+</p>
 
 <br />
 
