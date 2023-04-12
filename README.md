@@ -26,6 +26,7 @@ Estudo sobre o [Framework Remix](https://remix.run/)
 - [✅ Roteamento](#-roteamento)
   - [🔡 Sub-Rotas](#-sub-rotas)
   - [💲 Rotas Dinâmicas](#-rotas-dinâmicas)
+  - [🖼️ Layouts](#-layouts)
 
 <br />
 
@@ -206,6 +207,8 @@ A hierarquia de sub-rotas pode ser definida de duas maneiras:
   - `/dashboard/aulas/<id-aula>`
   - `/dashboard/notas`
 
+[Ver exemplo](my-expenses/app/routes/expenses/$id.tsx)
+
 <br />
 
 ##### 💲 Rotas Dinâmicas
@@ -240,3 +243,48 @@ export async function loader({ params }: ActionArgs) {
 Note que o nome do arquivo é `animais.$nomeDoAnimal.tsx`, ou seja, a rota para esta página será `/animais/cachorro` ou `/animais/coelho`, como visto nas [Sub-Rotas](#-sub-rotas).
 
 [Ver exemplo](./my-notes/app/routes/notes.%24noteId.tsx)
+
+<br />
+
+##### 🖼️ Layouts
+
+Layouts são componentes React que envolvem rotas para fornecer uma estrutura comum para elas, permitindo definir elementos de interface do usuário que são comuns a todas as páginas. Isso significa que um layout é um componente renderizado para um conjunto de sub-rotas pré definido:
+
+```
+routes
+├── fornecedores.tsx
+├── clientes.tsx     <- Layout
+└── clientes         <- Contém sub-rotas que usarão o layout
+    ├── cadastro.tsx
+    └── arquivos.tsx
+```
+
+No exemplo acima, todas as páginas dentro do diretório `clientes` serão renderizadas _dentro_ do layout `clientes.tsx`. Basta fazer uso do [Componente Outlet](#-componente-outlet-) no arquivo de layout:
+
+```tsx
+import { Outlet } from "@remix-run/react";
+
+export default function ClientesLayout() {
+  return (
+    <main>
+      <h1>Conteúdo renderizado em todas as sub-rotas de /clientes/"</h1>
+      <Outlet />
+    </main>
+  );
+}
+```
+
+Esse mesmo conceito é aplicado nos arquivos `./app/root.tsx` de cada projeto Remix.
+
+> Para fazer com que uma sub-rota não utilize o layout que está sendo aplicado em seu conjunto, basta remover o arquivo correspondente da pasta pai e usar a notação de ponto para determinar a hierarquia de rotas, como visto em [Sub-Rotas](#-sub-rotas):
+>
+> ```
+> routes
+> ├── fornecedores.tsx
+> ├── clientes.tsx          <- Layout
+> ├── clientes.arquivos.tsx <- Sub-rota que não usará o layout
+> └── clientes              <- Contém sub-rotas que usarão o layout
+>     └── cadastro.tsx
+> ```
+
+[Ver exemplo](./my-expenses/app/routes/expenses.tsx)
