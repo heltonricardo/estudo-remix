@@ -33,13 +33,14 @@
 
 html {
   font-family: "Rubik", sans-serif;
+  min-height: 100vh;
 }
 
 body {
   margin: 0;
   color: var(--color-gray-100);
   background: radial-gradient(ellipse at top left, var(--color-primary-300), var(--color-primary-800));
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 ul,
