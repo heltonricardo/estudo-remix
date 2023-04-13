@@ -1,3 +1,5 @@
+import ExpenseForm from "~/components/expenses/ExpenseForm";
+
 export default function UpdateExpensePage() {
-  return <h1>Update Expense Page</h1>;
+  return <ExpenseForm />;
 }
