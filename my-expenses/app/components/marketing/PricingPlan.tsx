@@ -1,12 +1,15 @@
+import { IconType } from "react-icons";
+
 interface Props {
   title: string;
-  price: number;
+  price: string;
   perks: string[];
-  icon: string;
+  icon: IconType;
 }
 
 export default function PricingPlan({ title, price, perks, icon }: Props) {
   const Icon = icon;
+
   return (
     <article>
       <header>

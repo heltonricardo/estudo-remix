@@ -22,7 +22,7 @@ export default function Chart({ expenses }: Props) {
   ];
 
   for (const expense of expenses) {
-    const expenseMonth = new Date(expense.date).getMonth(); // starting at 0 => January => 0
+    const expenseMonth = expense.date.getMonth(); // starting at 0 => January => 0
     chartDataPoints[expenseMonth].value += expense.amount;
   }
 

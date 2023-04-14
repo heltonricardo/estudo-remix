@@ -24,19 +24,19 @@ export default function ExpenseStatistics({ expenses }: Props) {
       <dl id="expense-statistics">
         <div>
           <dt>Total</dt>
-          <dd>${sum.toFixed(2)}</dd>
+          <dd>$ {sum.toFixed(2)}</dd>
         </div>
         <div>
           <dt>Average</dt>
-          <dd>${mean.toFixed(2)}</dd>
+          <dd>$ {mean.toFixed(2)}</dd>
         </div>
         <div>
           <dt>Min. Amount</dt>
-          <dd>${minAmount.toFixed(2)}</dd>
+          <dd>$ {minAmount.toFixed(2)}</dd>
         </div>
         <div>
           <dt>Max. Amount</dt>
-          <dd>${maxAmount.toFixed(2)}</dd>
+          <dd>$ {maxAmount.toFixed(2)}</dd>
         </div>
       </dl>
     </section>

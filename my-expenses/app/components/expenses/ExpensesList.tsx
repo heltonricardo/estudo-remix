@@ -8,9 +8,9 @@ interface Props {
 export default function ExpensesList({ expenses }: Props) {
   return (
     <ol id="expenses-list">
-      {expenses.map((expense) => (
-        <li key={expense.id}>
-          <ExpenseListItem title={expense.title} amount={expense.amount} />
+      {expenses.map(({ id, title, amount }: Expense) => (
+        <li key={id}>
+          <ExpenseListItem id={id} title={title} amount={amount} />
         </li>
       ))}
     </ol>
