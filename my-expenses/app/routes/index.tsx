@@ -41,5 +41,3 @@ export default function Index() {
     </main>
   );
 }
-
-export function meta() {}

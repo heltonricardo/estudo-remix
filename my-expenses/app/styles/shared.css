@@ -91,6 +91,12 @@ button {
   color: inherit;
 }
 
+#logo span {
+  margin-left: 1rem;
+  font-size: 0.75rem;
+  font-weight: 100;
+}
+
 .cta {
   padding: 0.5rem 2rem;
   background-color: var(--color-secondary-500);

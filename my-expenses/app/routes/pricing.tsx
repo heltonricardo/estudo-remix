@@ -15,5 +15,3 @@ export default function PricingPage() {
     </main>
   );
 }
-
-export function meta() {}
