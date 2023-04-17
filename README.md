@@ -22,7 +22,9 @@
 # 🔎 Sumário
 
 - [✅ Componentes](#-componentes)
-  - [🔁 Outlet](#-componente-outlet-)
+  - [🛟 Outlet](#-componente-outlet-)
+  - [↖️ Link](#%EF%B8%8F-componente-link-)
+  - [🌟 NavLink](#-componente-navlink-)
 - [✅ Funções](#-funções)
   - [🎯 Principal](#-função-principal)
   - [🔀 links](#-função-links)
@@ -44,11 +46,51 @@ Elementos do Remix para serem usados em formato de tags HTML / componentes React
 
 <br />
 
-##### 🔁 Componente \<Outlet />
+##### 🛟 Componente \<Outlet />
 
 Componente que será substituído pelo código da página, ou seja, o código retornado pela [Função Principal](#-função-principal).
 
 [Ver exemplo](./my-notes/app/root.tsx)
+
+<br />
+
+##### ↖️ Componente \<Link />
+
+Componente que permite aos usuários navegar entre diferentes rotas em um aplicativo web, sem precisar recarregar a página inteira. É semelhante à tag `<a>` do HTML, mas é otimizado para uso com o framework Remix.
+
+> Ele deve ser usado somente para rotas da própria aplicação! Para rotas externas, use o `<a>` do HTML. E para ter mais segurança nesse caso, veja [esta dica](https://gist.github.com/heltonricardo/3accebccceb9dc81eecf276d55448684).
+
+O endereço destino deve ser inserido como valor do atributo `to`. Caso o valor inicie-se com barra (`/`), o roteamento será feito a partir da raiz da aplicação. Mas caso o valor inicie-se sem a barra, o roteamento será feito de forma relativa, adicionando o endereço do link ao endereço atual separado por barra (ver [Sub-rotas](#-sub-rotas)):
+
+```tsx
+// Arquivo: routes/empresas/dados.tsx
+
+import { Link } from "@remix-run/react";
+
+export default function Dados() {
+  return (
+    <h1>Dados da empresa</h1>
+    <Link to="ends">Endereços</Link>
+    <Link to="/patrocinadores">Patrocinadores</Link>
+  );
+}
+```
+
+No exemplo acima, o primeiro link será roteado para `/empresas/dados/ends` e o segundo para `/patrocinadores`.
+
+> Também é possível usar a notação ponto-ponto (`..`) como valor do atributo `to` para indicar a super-rota (rota pai) da rota atual!
+
+[Ver exemplo](./my-expenses/app/components/expenses/ExpenseListItem.tsx)
+
+<br />
+
+##### 🌟 Componente \<NavLink />
+
+Funciona igual ao [Componente Link](#%EF%B8%8F-componente-link-), porém aplica uma classe CSS para o link ativo, ou seja, o link que leva à rota atual ficará destacado em relação aos links de outras rotas.
+
+O funcionamento é bem simples. Basta, ao definir as folhas de estilo para os links, customizar o CSS para a pseudo-classe `:active` e ela será aplicada automaticamente pelo Remix.
+
+[Ver exemplo](./my-expenses/app/components/navigation/MainHeader.tsx)
 
 <br />
 
