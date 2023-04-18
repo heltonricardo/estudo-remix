@@ -12,7 +12,7 @@ const DUMMY_PRICING_PLANS: PricingPlan[] = [
   new PricingPlan(
     "p2",
     "Pro",
-    "$9.99/month",
+    "$ 9.99/month",
     ["Unlimited Users", "Unlimited expenses/year", "Detailed analytics"],
     FaTrophy
   ),
