@@ -2,7 +2,7 @@
 
 Aplicação simples usando [Remix](https://remix.run/) para o gerenciamento de despesas.
 
-🌟 Visualizar meu deploy na Vercel (TODO)
+[🌟 Visualizar meu deploy na Vercel](https://my-expenses-seven.vercel.app/)
 
 <br />
 
