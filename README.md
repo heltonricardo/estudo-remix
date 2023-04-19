@@ -27,22 +27,23 @@
 
 # 🔎 Sumário
 
-- [✅ Componentes](#-componentes)
-  - [🛟 Outlet](#-componente-outlet-)
-  - [↖️ Link](#%EF%B8%8F-componente-link-)
-  - [🌟 NavLink](#-componente-navlink-)
-- [✅ Funções](#-funções)
-  - [🎯 Principal](#-função-principal)
-  - [🔀 links](#-função-links)
-  - [🌐 loader](#-função-loader)
-  - [🎬 action](#-função-action)
-  - [💡 meta](#-função-meta)
-  - [🧤 CatchBoundary](#-função-catchboundary)
-  - [🐛 ErrorBoundary](#-função-errorboundary)
-- [✅ Roteamento](#-roteamento)
-  - [🔡 Sub-Rotas](#-sub-rotas)
-  - [💲 Rotas Dinâmicas](#-rotas-dinâmicas)
-  - [🖼️ Layouts](#%EF%B8%8F-layouts)
+- ✅ [Componentes](#-componentes)
+  - 🛟 [Outlet](#-componente-outlet-)
+  - ↖️ [Link](#%EF%B8%8F-componente-link-)
+  - 🌟 [NavLink](#-componente-navlink-)
+- ✅ [Funções](#-funções)
+  - 🎯 [Principal](#-função-principal)
+  - 🔀 [links](#-função-links)
+  - 🌐 [loader](#-função-loader)
+  - 🎬 [action](#-função-action)
+  - 💡 [meta](#-função-meta)
+  - 🧤 [CatchBoundary](#-função-catchboundary)
+  - 🐛 [ErrorBoundary](#-função-errorboundary)
+- ✅ [Roteamento](#-roteamento)
+  - 🔡 [Sub-Rotas](#-sub-rotas)
+  - 💲 [Rotas Dinâmicas](#-rotas-dinâmicas)
+  - 🖼️ [Layouts](#%EF%B8%8F-layouts)
+  - ⛰️ [Layouts sem caminho](#%EF%B8%8F-layouts-sem-caminho)
 
 <br />
 
@@ -54,7 +55,21 @@ Elementos do Remix para serem usados em formato de tags HTML / componentes React
 
 ##### 🛟 Componente \<Outlet />
 
-Componente que será substituído pelo código da página, ou seja, o código retornado pela [Função Principal](#-função-principal).
+Componente especial que permite renderizar o conteúdo de uma rota filha dentro de um componente de layout pai.
+
+Em outras palavras, um Outlet do [Layout](#%EF%B8%8F-layouts) pai será substituído pelo conteúdo retornado pela [Função Principal](#-função-principal) da rota filha.
+
+```tsx
+import { Outlet } from "@remix-run/react";
+
+export default function MeuLayout() {
+  return <Outlet />;
+}
+```
+
+O componente `./app/root.jsx` (ou `.tsx`) já possui um Outlet na criação do projeto Remix pois todas as rotas são filhas dele. O conteúdo carregado neste componente também será carregado em todas as [Sub-Rotas](#-sub-rotas) do projeto.
+
+O Outlet é uma peça fundamental do Remix para a criação de layouts e rotas flexíveis e reutilizáveis em aplicativos web, conteúdo que ficará mais claro nas outras seções desse documento.
 
 [Ver exemplo](./my-notes/app/root.tsx)
 
@@ -344,3 +359,46 @@ Esse mesmo conceito é aplicado nos arquivos `./app/root.tsx` de cada projeto Re
 > ```
 
 [Ver exemplo](./my-expenses/app/routes/expenses.tsx)
+
+<br />
+
+##### ⛰️ Layouts sem caminho
+
+Técnica de roteamento utilizada para criar rotas de página que não têm um caminho explícito definido.
+
+Ao utilizar uma rota de layout sem caminho (pathless), o componente de layout é renderizado em todas as rotas filhas, independentemente de seu caminho específico.
+
+Isso permite compartilhar um mesmo layout entre várias rotas ou grupos de rotas, sem repetição de código ou necessidade de definir caminhos separados para cada uma delas.
+
+Para criar um Layout assim, criamos um diretório e um arquivo React com o nome contendo o prefixo _duplo underscore_ (`__`), como mostrado no exemplo:
+
+```
+routes
+└── cadastros
+    ├── __clientes.tsx   <- Layout sem caminho
+    └── __clientes       <- Contém rotas com o Layout
+        ├── ativos.tsx
+        └── inativos.tsx
+```
+
+```tsx
+// Arquivo: routes/cadastros/__clientes.tsx
+
+import { Outlet } from "@remix-run/react";
+import dummyStyles from "~/styles/dummy.css";
+
+export default function ClientesLayout() {
+  return <Outlet />;
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: dummyStyles }];
+}
+```
+
+No caso acima, um Layout sem caminho foi usado para compartilhar folhas de estilo entre duas rotas sem alterá-las:
+
+- /cadastros/ativos
+- /cadastros/inativos
+
+[Ver exemplo](./my-expenses/app/routes/__marketing.tsx)
