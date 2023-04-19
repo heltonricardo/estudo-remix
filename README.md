@@ -14,8 +14,14 @@
 
 ### Projetos deste repositório
 
-- [x] 📝 [My Notes](https://github.com/heltonricardo/estudo-remix/tree/main/my-notes) - [Acessar deploy](https://my-notes-tau.vercel.app/)
-- [ ] 📝 [My Expenses](https://github.com/heltonricardo/estudo-remix/tree/main/my-expenses) - TODO
+- 📝 [My Notes](https://github.com/heltonricardo/estudo-remix/tree/main/my-notes) - [Acessar deploy](https://my-notes-tau.vercel.app/) ✅
+- 💰 [My Expenses](https://github.com/heltonricardo/estudo-remix/tree/main/my-expenses) - [Acessar deploy](https://my-expenses-seven.vercel.app/) ⏳
+
+<br>
+###### Legenda:
+
+✅: Finalizado
+⏳: Em andamento
 
 <br />
 
