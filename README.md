@@ -44,6 +44,7 @@
   - 💲 [Rotas Dinâmicas](#-rotas-dinâmicas)
   - 🖼️ [Layouts](#%EF%B8%8F-layouts)
   - ⛰️ [Layouts sem caminho](#%EF%B8%8F-layouts-sem-caminho)
+  - [Rotas de Recurso](#-rotas-de-recurso)
 
 <br />
 
@@ -402,3 +403,23 @@ No caso acima, um Layout sem caminho foi usado para compartilhar folhas de estil
 - /cadastros/inativos
 
 [Ver exemplo](./my-expenses/app/routes/__marketing.tsx)
+
+<br />
+
+##### 🔰 Rotas de Recurso
+
+São rotas que não geram uma página, por isso não possuem uma [Função Principal](#-função-principal), mas sim uma [Função loader](#-função-loader).
+
+Por exemplo: é possível retornar um objeto da função:
+
+```tsx
+export function loader() {
+  return {
+    nome: "Helton",
+    sobrenome: "Santos",
+    frontend: "Remix.run",
+  };
+}
+```
+
+[Ver exemplo](./my-expenses/app/routes/expenses.raw.tsx)
