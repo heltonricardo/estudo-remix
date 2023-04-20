@@ -435,6 +435,8 @@ Para definir uma rota de splat no Remix, você pode utilizar o caractere asteris
 
 Quando o usuário acessa uma URL que corresponde a uma rota de splat, o valor correspondente ao curinga é capturado e disponibilizado para ser utilizado na [Função loader](#-função-loader) da rota. Dessa forma, você pode utilizar esses parâmetros para carregar dados específicos de acordo com a URL acessada pelo usuário.
 
+O arquivo contendo a rota curinga _deve_ ser nomeado como `cifrão.extensão`: `$.jsx` ou `$.tsx`:
+
 ```tsx
 import { redirect } from "@remix-run/node";
 
@@ -446,5 +448,13 @@ export function loader({ params }) {
   return new Response("Página não encontrada", { status: 404 });
 }
 ```
+
+No exemplo acima, o usuário que acessar:
+`www.meu-app.com/encurta-link/clientes`
+
+será redirecionado para:
+`www.meu-app.com/cadastros/pessoas/clientes/lista-de-clientes-ativos`
+
+> O Remix permite que existam vários arquivos de rota curinga no projeto. Nesse caso, a rota curinga acionada será sempre a de ascendente mais próxima.
 
 [Ver exemplo](./my-expenses/app/routes/%24.tsx)
