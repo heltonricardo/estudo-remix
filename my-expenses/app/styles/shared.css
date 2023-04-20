@@ -85,6 +85,8 @@ button {
   color: var(--color-primary-10);
   font-size: 1.15rem;
   justify-self: start;
+  display: flex;
+  flex-direction: column;
 }
 
 #logo a {
@@ -92,7 +94,6 @@ button {
 }
 
 #logo span {
-  margin-left: 1rem;
   font-size: 0.75rem;
   font-weight: 100;
 }
