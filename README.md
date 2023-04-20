@@ -44,7 +44,8 @@
   - 💲 [Rotas Dinâmicas](#-rotas-dinâmicas)
   - 🖼️ [Layouts](#%EF%B8%8F-layouts)
   - ⛰️ [Layouts sem caminho](#%EF%B8%8F-layouts-sem-caminho)
-  - [Rotas de Recurso](#-rotas-de-recurso)
+  - 🔰 [Rotas de Recurso](#-rotas-de-recurso)
+  - 🃏 [Rotas Curinga](#-rotas-curinga)
 
 <br />
 
@@ -423,3 +424,27 @@ export function loader() {
 ```
 
 [Ver exemplo](./my-expenses/app/routes/expenses.raw.tsx)
+
+<br />
+
+##### 🃏 Rotas Curinga
+
+Também conhecidas como Splat Routes, compõem uma técnica de roteamento que permite definir rotas com curingas (wildcards) para capturar um conjunto variável de parâmetros em uma URL.
+
+Para definir uma rota de splat no Remix, você pode utilizar o caractere asterisco (`*`) na definição do caminho da rota. Por exemplo, uma rota com o caminho `/users/*` irá corresponder a qualquer URL que comece com `/users/`, seguida por qualquer sequência de caracteres.
+
+Quando o usuário acessa uma URL que corresponde a uma rota de splat, o valor correspondente ao curinga é capturado e disponibilizado para ser utilizado na [Função loader](#-função-loader) da rota. Dessa forma, você pode utilizar esses parâmetros para carregar dados específicos de acordo com a URL acessada pelo usuário.
+
+```tsx
+import { redirect } from "@remix-run/node";
+
+export function loader({ params }) {
+  if (params["*"] === "encurta-link/clientes") {
+    return redirect("/cadastros/pessoas/clientes/lista-de-clientes-ativos");
+  }
+
+  return new Response("Página não encontrada", { status: 404 });
+}
+```
+
+[Ver exemplo](./my-expenses/app/routes/%24.tsx)
