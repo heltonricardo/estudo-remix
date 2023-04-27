@@ -169,7 +169,7 @@ button {
   border-radius: 6px;
   border: none;
   background-color: var(--color-gray-50);
-  animation: fade-slide-down 0.5s ease-out forwards;
+  animation: fade-in 1s;
 }
 
 .error {
