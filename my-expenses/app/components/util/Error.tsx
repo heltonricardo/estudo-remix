@@ -5,7 +5,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function Error({ title, children }: Props) {
+export default function ErrorComponent({ title, children }: Props) {
   return (
     <div className="error">
       <div className="icon">
