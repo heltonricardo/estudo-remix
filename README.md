@@ -18,17 +18,18 @@
 - 💰 [My Expenses](https://github.com/heltonricardo/estudo-remix/tree/main/my-expenses) - [Acessar deploy](https://my-expenses-seven.vercel.app/) ⏳
 
 <br>
+
 ###### Legenda:
 
-✅: Finalizado
-⏳: Em andamento
+- ✅ Finalizado
+- ⏳ Em andamento
 
 <br />
 
 # 🔎 Sumário
 
 - ✅ [Componentes](#-componentes)
-  - 🛟 [Outlet](#-componente-outlet-)
+  - 💡 [Outlet](#-componente-outlet-)
   - ↖️ [Link](#%EF%B8%8F-componente-link-)
   - 🌟 [NavLink](#-componente-navlink-)
 - ✅ [Funções](#-funções)
@@ -36,7 +37,7 @@
   - 🔀 [links](#-função-links)
   - 🌐 [loader](#-função-loader)
   - 🎬 [action](#-função-action)
-  - 💡 [meta](#-função-meta)
+  - 📄 [meta](#-função-meta)
   - 🧤 [CatchBoundary](#-função-catchboundary)
   - 🐛 [ErrorBoundary](#-função-errorboundary)
 - ✅ [Roteamento](#-roteamento)
@@ -55,7 +56,7 @@ Elementos do Remix para serem usados em formato de tags HTML / componentes React
 
 <br />
 
-##### 🛟 Componente \<Outlet />
+##### 💡 Componente \<Outlet />
 
 Componente especial que permite renderizar o conteúdo de uma rota filha dentro de um componente de layout pai.
 
@@ -180,7 +181,7 @@ O código dessa função é executado do lado do servidor e seu código fonte n�
 
 <br />
 
-##### 💡 Função meta
+##### 📄 Função meta
 
 Função usada para adicionar metadados nas páginas da aplicação. Ela deve retornar um objeto do JavaScript com os membros desejados:
 
