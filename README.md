@@ -32,6 +32,13 @@
   - 💡 [Outlet](#-componente-outlet-)
   - ↖️ [Link](#%EF%B8%8F-componente-link-)
   - 🌟 [NavLink](#-componente-navlink-)
+- ✅ [Hooks](#-hooks)
+  - ⛵️ [useNavigate](#%EF%B8%8F-usenavigate)
+  - 🔍 [useSearchParams](#-usesearchparams)
+  - 📦 [useLoaderData](#-useloaderdata)
+  - 📥 [useActionData](#-useactiondata)
+  - 🚀 [useTransition](#-usetransition)
+  - 🪣 [useCatch](#-usecatch)
 - ✅ [Funções](#-funções)
   - 🎯 [Principal](#-função-principal)
   - 🔀 [links](#-função-links)
@@ -115,6 +122,60 @@ Funciona igual ao [Componente Link](#%EF%B8%8F-componente-link-), porém aplica 
 O funcionamento é bem simples. Basta, ao definir as folhas de estilo para os links, customizar o CSS para a pseudo-classe `:active` e ela será aplicada automaticamente pelo Remix.
 
 [Ver exemplo](./my-expenses/app/components/navigation/MainHeader.tsx)
+
+<br />
+
+## ✅ Hooks
+
+Funções especiais que fornecem acesso a recursos e funcionalidades específicas do framework.
+
+<br />
+
+##### ⛵️ useNavigate
+
+Usado para navegar para uma rota específica do aplicativo. Ele retorna uma função que pode ser chamada para alterar a rota atual.
+
+[Ver exemplo](./my-expenses/app/routes/__app/expenses/add.tsx)
+
+<br />
+
+##### 🔍 useSearchParams
+
+Permite acessar e manipular os parâmetros da URL da página. Ele retorna um objeto contendo os parâmetros da pesquisa da URL atual.
+
+[Ver exemplo](./my-expenses/app/components/auth/AuthForm.tsx)
+
+<br />
+
+##### 📦 useLoaderData
+
+Usado para acessar dados pré-carregados em uma rota específica. Ele retorna um objeto contendo os dados de carregamento.
+
+[Ver exemplo](./my-notes/app/routes/notes.tsx)
+
+<br />
+
+##### 📥 useActionData
+
+Usado para acessar dados relacionados a uma ação executada na rota atual. Ele retorna um objeto contendo os dados da ação.
+
+[Ver exemplo](./my-notes/app/components/NewNote/index.tsx)
+
+<br />
+
+##### 🚀 useTransition
+
+Também conhecido como useNavigation, é usado para gerenciar transições entre páginas. Ele retorna uma função que pode ser chamada para iniciar uma transição para outra rota.
+
+[Ver exemplo](./my-notes/app/components/NewNote/index.tsx)
+
+<br />
+
+##### 🪣 useCatch
+
+Usado para lidar com erros e exceções em uma rota específica. Ele permite definir uma função de callback para tratar os erros que ocorrem durante a execução dessa rota.
+
+[Ver exemplo](./my-notes/app/root.tsx)
 
 <br />
 
