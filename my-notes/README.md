@@ -10,7 +10,7 @@ Aplicação simples para o armazenamento de anotações.
 
 ### I. Configurando a base de dados para o projeto
 
-1. Siga as instruções contidas em [**Criando e adicionando um banco de dados Google Firestore a um projeto web**](https://gist.github.com/heltonricardo/a2fb926bbda72678347d611b1b4205e0)
+1. Siga as instruções contidas em [**Criando e adicionando um banco de dados Google Firestore a um projeto web**](https://medium.com/@heltonricardo/criando-e-adicionando-um-banco-de-dados-google-firestore-a-um-projeto-web-3d32f9dbbc52)
 
 ### II. Instalando as dependências
 
