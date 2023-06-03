@@ -89,7 +89,7 @@ O Outlet é uma peça fundamental do Remix para a criação de layouts e rotas f
 
 Componente que permite aos usuários navegar entre diferentes rotas em um aplicativo web, sem precisar recarregar a página inteira. É semelhante à tag `<a>` do HTML, mas é otimizado para uso com o framework Remix.
 
-> Ele deve ser usado somente para rotas da própria aplicação! Para rotas externas, use o `<a>` do HTML. E para ter mais segurança nesse caso, veja [esta dica](https://gist.github.com/heltonricardo/3accebccceb9dc81eecf276d55448684).
+> Ele deve ser usado somente para rotas da própria aplicação! Para rotas externas, use o `<a>` do HTML. E para ter mais segurança nesse caso, veja [esta dica](https://medium.com/@heltonricardo/%C3%A2ncora-html-segura-para-abrir-um-link-em-outra-aba-ad6a60ad7b0c).
 
 O endereço destino deve ser inserido como valor do atributo `to`. Caso o valor inicie-se com barra (`/`), o roteamento será feito a partir da raiz da aplicação. Mas caso o valor inicie-se sem a barra, o roteamento será feito de forma relativa, adicionando o endereço do link ao endereço atual separado por barra (ver [Sub-rotas](#-sub-rotas)):
 
