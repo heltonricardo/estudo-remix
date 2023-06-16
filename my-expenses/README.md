@@ -8,17 +8,21 @@ Aplicação simples usando [Remix](https://remix.run/) para o gerenciamento de d
 
 ## Como executar este projeto localmente
 
-### I. Instalando as dependências
+### I. Configurando a base de dados para o projeto
+
+1. Siga as instruções contidas em [**Como adicionar um banco de dados MongoDB a um projeto JS/TS e modelar com Prisma**](https://medium.com/@heltonricardo/como-adicionar-um-banco-de-dados-mongodb-a-um-projeto-js-ts-e-modelar-com-prisma-ff18903608b7) - mais especificamente, siga todas as instruções da seção `MongoDB` e a seção `Prisma > Configure a conexão`.
+
+### II. Instalando as dependências
 
 1. Instale o [Node.js](https://nodejs.dev/en/download/);
 
-2. Em um terminal de sua preferência, navegue até o diretório raiz do projeto, `./my-expenses`, execute o seguinte comando e aguarde a finalização:
+2. Em um terminal de sua preferência, navegue até o diretório raiz do projeto, `./my-notes`, execute o seguinte comando e aguarde a finalização:
 
 ```
 npm install
 ```
 
-### II. Executando o projeto
+### III. Executando o projeto
 
 1. Ainda no diretório raiz do projeto, execute o comando no terminal:
 
